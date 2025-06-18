@@ -39,15 +39,32 @@ export default function Home() {
       {loading ? (
         <div className="text-gray-400 text-center">Chargement...</div>
       ) : (
-        <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {movies.map(m => <MovieCard key={m.source==='custom'?`custom-${m.idIndex}`:m.id} movie={m} />)}
+        <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {movies.map(m => (
+            <MovieCard
+              key={m.source === 'custom' ? `custom-${m.idIndex}` : m.id}
+              movie={m}
+            />
+          ))}
         </div>
       )}
 
       <div className="flex items-center justify-center mt-6 space-x-4">
-        <button onClick={handlePrev} disabled={page===1} className="bg-gray-700 text-white px-4 py-2 rounded disabled:opacity-50 transition">Précédent</button>
+        <button
+          onClick={handlePrev}
+          disabled={page === 1}
+          className="bg-gray-700 text-white px-4 py-2 rounded disabled:opacity-50 transition"
+        >
+          Précédent
+        </button>
         <span className="text-gray-200">Page {page} de {totalPages}</span>
-        <button onClick={handleNext} disabled={page===totalPages} className="bg-gray-700 text-white px-4 py-2 rounded disabled:opacity-50 transition">Suivant</button>
+        <button
+          onClick={handleNext}
+          disabled={page === totalPages}
+          className="bg-gray-700 text-white px-4 py-2 rounded disabled:opacity-50 transition"
+        >
+          Suivant
+        </button>
       </div>
     </div>
   );
