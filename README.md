@@ -1,4 +1,3 @@
-````markdown
 # 🎬 MyFilms
 
 
@@ -41,9 +40,8 @@
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/USERNAME/film-app.git
-   cd film-app
-````
+   git clone https://github.com/medmokhtarbouna/MyFilms.git
+   cd my-film
 
 2. Installez les dépendances :
 
